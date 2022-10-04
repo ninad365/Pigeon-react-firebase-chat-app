@@ -8,7 +8,7 @@ export default function ChatMessage(props) {
   
     return (<>
       <div className={`message ${messageClass}`}>
-        <img src={photoURL || 'https://png.pngtree.com/png-vector/20210307/ourlarge/pngtree-simple-capsule-medicine-linear-icon-png-image_3015300.png'} />
+        <img alt="No img" src={photoURL || 'https://png.pngtree.com/png-vector/20210307/ourlarge/pngtree-simple-capsule-medicine-linear-icon-png-image_3015300.png'} />
         <p>{text}</p>
       </div>
     </>)
