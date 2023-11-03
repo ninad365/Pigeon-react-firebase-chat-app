@@ -30,12 +30,12 @@ function App() {
   const [user] = useAuthState(auth);
   return (
     <div className="App">
-      <header>
-        <h1>Pigeon</h1>
-        <SignOut auth={auth}/>
+      <header className="App-header">
+        <h1 className="App-title">Pigeon</h1>
+        <SignOut auth={auth} />
       </header>
 
-      <section>
+      <section className="App-section">
         {user ? <ChatRoom /> : <SignIn />}
       </section>
 
