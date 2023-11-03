@@ -75,6 +75,11 @@ main {
   justify-content: flex-start;
 }
 
+.message .message-content {
+  display: flex;
+  align-items: center;
+}
+
 .message img {
   width: 40px;
   height: 40px;
