@@ -31,7 +31,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <h1 className="App-title">Pigeon</h1>
+        <h1 className="App-title">ChatterBox</h1>
         <SignOut auth={auth} />
       </header>
 
