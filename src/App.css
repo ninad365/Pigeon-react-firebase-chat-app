@@ -61,6 +61,24 @@ main {
   max-height: 400px;
 }
 
+.chatroom {
+  display: grid;
+  grid-template-columns: 250px 1fr; /* Define the columns for user list and chat messages */
+  height: 100%; /* Adjust the height as needed */
+}
+
+.user-list-section {
+  background-color: #f3f3f3;
+  border-right: 1px solid #ccc;
+  padding: 10px;
+  overflow-y: auto; /* Add scroll if the user list overflows */
+}
+
+.chat-messages-section {
+  padding: 20px;
+  overflow-y: auto; /* Add scroll if the chat messages overflow */
+}
+
 /* Chat Message Styles */
 .message {
   display: flex;
@@ -68,11 +86,16 @@ main {
 }
 
 .message.sent {
-  justify-content: flex-end;
+  flex-direction: row-reverse;
 }
 
 .message.received {
   justify-content: flex-start;
+}
+
+.message .message-content {
+  display: flex;
+  align-items: center;
 }
 
 .message img {
