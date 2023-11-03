@@ -25,7 +25,7 @@ export default function ChatRoom() {
       };
     },
   };
-  
+
   const messagesRef = collection(db, 'messages').withConverter(postConverter);
   const q = query(collection(db, 'messages'), orderBy('createdAt'));
   const [messages] = useCollectionData(q, { idField: 'id' });
@@ -58,7 +58,7 @@ export default function ChatRoom() {
       </main>
       <form onSubmit={sendMessage}>
         <input value={formValue} onChange={(e) => setFormValue(e.target.value)} placeholder="say something nice" />
-        <button type="submit" disabled={!formValue}>🕊️</button>
+        <button type="submit" disabled={!formValue}>➡️</button>
       </form>
     </>
   );
