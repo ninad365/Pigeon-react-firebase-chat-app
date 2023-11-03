@@ -68,7 +68,7 @@ main {
 }
 
 .message.sent {
-  justify-content: flex-end;
+  flex-direction: row-reverse;
 }
 
 .message.received {
