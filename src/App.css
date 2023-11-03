@@ -70,7 +70,7 @@ main {
 .user-list-section {
   background-color: #f3f3f3;
   border-right: 1px solid #ccc;
-  padding: 20px;
+  padding: 10px;
   overflow-y: auto; /* Add scroll if the user list overflows */
 }
 
@@ -173,63 +173,4 @@ button:disabled {
   .App-title {
     font-size: 20px;
   }
-}
-
-/* UserList Styles */
-.user-list {
-  width: 200px; /* Adjust the width as needed */
-  padding: 20px;
-  background-color: #f3f3f3;
-  border-right: 1px solid #ccc;
-  overflow-y: auto; /* Add scroll if the user list overflows */
-}
-
-.user-list h2 {
-  font-size: 18px;
-  margin-bottom: 10px;
-}
-
-.user-list ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.user-item {
-  padding: 10px;
-  background-color: #fff;
-  border: 1px solid #e0e0e0;
-  margin-bottom: 10px;
-  display: flex;
-  align-items: center;
-  border-radius: 5px;
-}
-
-.user-list li {
-  display: flex;
-  align-items: center;
-  margin: 10px 0;
-}
-
-.user-list .user-avatar img {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  margin-right: 10px;
-}
-
-.user-info {
-  flex: 1;
-}
-
-.user-list h3 {
-  font-size: 16px;
-  margin: 0;
-  color: #333;
-}
-
-.current-user {
-  background-color: #007bff; /* Adjust the background color for the current user */
-  color: #fff; /* Adjust the text color for the current user */
-  font-weight: bold; /* Apply a bold font to the current user */
 }

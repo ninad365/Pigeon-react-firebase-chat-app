@@ -1,4 +1,5 @@
 import React from 'react';
+import './UserList.css';
 
 const sampleUsers = [
     { id: 1, name: 'Global', current: true },
