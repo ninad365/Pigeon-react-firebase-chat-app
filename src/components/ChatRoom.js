@@ -6,6 +6,7 @@ import ChatMessage from './ChatMessage';
 import UserList from './UserList';
 
 export default function ChatRoom() {
+  const [currentUser, setCurrentUser] = useState(null);
   const dummy = useRef();
   const postConverter = {
     toFirestore(post) {
@@ -49,15 +50,23 @@ export default function ChatRoom() {
     });
     setFormValue('');
   }
-
+  const handleUserClick = (user) => {
+    // Update current user when a user is clicked
+    setCurrentUser(user);
+  };
   return (
     <div className="chatroom">
       <div className="user-list-section">
-        <UserList /> {/* Display the UserList component in the left section */}
+        <UserList onUserClick={handleUserClick} />
       </div>
       <div className="chat-messages-section">
         <main>
-          {messages && messages.map(msg => <ChatMessage key={msg.id} message={msg} />)}
+          {messages &&
+            messages
+              .filter((msg) => currentUser === null || msg.uid === currentUser.id)
+              .map((msg) => (
+                <ChatMessage key={msg.id} message={msg} />
+              ))}
           <span ref={dummy}></span>
         </main>
         <form onSubmit={sendMessage}>
