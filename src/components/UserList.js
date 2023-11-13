@@ -1,5 +1,5 @@
 // UserList.js
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import './UserList.css';
 
 const sampleUsers = [
@@ -7,7 +7,6 @@ const sampleUsers = [
 ];
 
 const UserList = ({ onUserClick }) => {
-  const [users, setUsers] = useState([]);
   const handleUserClick = (user) => {
     // Handle user click, update current user, etc.
     onUserClick(user);
