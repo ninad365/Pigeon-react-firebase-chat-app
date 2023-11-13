@@ -1,14 +1,13 @@
 // UserList.js
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './UserList.css';
 
 const sampleUsers = [
   { id: 1, name: 'Global', current: true },
-  { id: 2, name: 'User' },
-  { id: 3, name: 'User2' },
 ];
 
 const UserList = ({ onUserClick }) => {
+  const [users, setUsers] = useState([]);
   const handleUserClick = (user) => {
     // Handle user click, update current user, etc.
     onUserClick(user);
