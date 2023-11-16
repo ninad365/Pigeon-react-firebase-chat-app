@@ -5,7 +5,6 @@ import { collection, getDocs } from 'firebase/firestore';
 
 const UserList = ({ onUserClick }) => {
   const [users, setUsers] = useState([]);
-  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchUsers = async () => {
@@ -14,13 +13,11 @@ const UserList = ({ onUserClick }) => {
         const userlist = [];
         querySnapshot.forEach((doc) => {
           var data = doc.data();
-          userlist.push({name: data.displayName, id: data.id});
+          userlist.push({ name: data.displayName, id: data.id });
         });
         setUsers(userlist);
-        setLoading(false); // Set loading to false after data is fetched
       } catch (error) {
         console.error('Error fetching users from Firebase:', error);
-        setLoading(false); // Set loading to false on error as well
       }
     };
 
@@ -34,19 +31,15 @@ const UserList = ({ onUserClick }) => {
   return (
     <div className="user-list">
       <h2>Chats</h2>
-      {loading ? (
-        <p>Loading...</p>
-      ) : (
-        <ul>
-          {users.map((user) => (
-            <li key={user.id} className={`user-item ${user.current ? 'current-user' : ''}`}>
-              <div className="user-info" onClick={() => handleUserClick(user)}>
-                <h3>{user.name}</h3>
-              </div>
-            </li>
-          ))}
-        </ul>
-      )}
+      <ul>
+        {users.map((user) => (
+          <li key={user.id} className={`user-item ${user.current ? 'current-user' : ''}`}>
+            <div className="user-info" onClick={() => handleUserClick(user)}>
+              <h3>{user.name}</h3>
+            </div>
+          </li>
+        ))}
+      </ul>
     </div>
   );
 };
