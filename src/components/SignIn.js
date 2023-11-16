@@ -12,7 +12,8 @@ export default function SignIn() {
             await setDoc(doc(db, "users", result.user.uid), {
                 email: result.user.email, 
                 photoUrl: result.user.photoURL,
-                displayName: result.user.displayName
+                displayName: result.user.displayName,
+                id: result.user.uid,
             });
           });
     }
